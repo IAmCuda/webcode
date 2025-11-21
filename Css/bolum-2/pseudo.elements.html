@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p::first-line {
+        font-weight: bold;
+        color: rgb(80, 12, 12);
+        word-spacing: 3px;
+        letter-spacing: 1px;
+      }
+      p.about::first-line {
+        color: rgb(226, 17, 188);
+      }
+      p::first-letter {
+        font-size: 48px;
+      }
+
+      ::selection {
+        background-color: yellow;
+      }
+
+      p::after {
+        content: "\1F4CC";
+        font-size: 25px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Pseudo classes-->
+
+    <!-- Pseudo elements-->
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel cupiditate
+      libero quisquam ex perferendis hic iure nostrum fugit aspernatur,
+      recusandae, ut neque, sunt nisi accusamus repudiandae dolore commodi
+      maiores quae.
+    </p>
+    <p class="about">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolores cum
+      voluptatem cupiditate, culpa ipsum harum quos voluptatum quaerat illo enim
+      accusamus quo necessitatibus, ea aperiam. Culpa doloribus ea harum.
+    </p>
+  </body>
+</html>
