@@ -10,19 +10,23 @@ body {
 .row {
   margin-bottom: 40px;
 }
+
 .row::after {
   content: "";
   display: block;
   clear: both;
 }
+
 .col-4 {
   float: left;
   width: 25%;
 }
+
 .col-3 {
   float: left;
   width: 33.3%;
 }
+
 .col-2 {
   float: left;
   width: 50%;
@@ -34,7 +38,6 @@ body {
   clear: both;
 }
 .container {
-  margin: 0 auto;
   width: 100%;
 }
 

@@ -21,8 +21,8 @@ main {
     url("../img/bg.jpeg");
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
-  height: 80vh;
+
+  height: 40vh;
   width: 100%;
   position: relative;
 }
@@ -33,7 +33,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 30px;
+  font-size: 20px;
   background: rgba(46, 76, 109, 0.3);
   padding: 20px;
   width: 60%;
@@ -45,9 +45,35 @@ main {
   top: 50%;
   margin: 0;
   color: #fff;
-  font-size: 45px;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media (min-width: 576px) {
+  #showcase {
+    height: 50vh;
+  }
+  #showcase .content {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 768px) {
+  #showcase {
+    height: 60vh;
+  }
+  #showcase .content {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  #showcase {
+    height: 70vh;
+  }
+  #showcase .content {
+    font-size: 26px;
+  }
 }
 
 .main-header {
