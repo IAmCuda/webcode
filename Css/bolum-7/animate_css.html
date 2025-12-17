@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Document</title>
+    <style>
+      div {
+        width: 150px;
+        height: 200px;
+        background-color: blueviolet;
+      }
+      .element {
+        background-color: yellow;
+        animation: bounceInUp;
+        animation-duration: 2s;
+      }
+
+      .animate__animated.animate__headShake {
+        --animate-duration: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="animate__animated animate__headShake animate__infinite">
+      An animated element
+    </h1>
+    <div class="animate__animated animate__jello animate__delay-5s"></div>
+    <div class="element"></div>
+  </body>
+</html>
