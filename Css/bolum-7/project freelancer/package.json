@@ -5,10 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch sass:css"
+    "scss": "sass --watch --style=compressed scss:public/css",
+    "scss2": "sass --watch --style=expanded scss:public/css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "lightbox2": "^2.11.5",
+    "owl.carousel": "^2.3.4"
+  }
 }
