@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar bg-dark border-bottom border-body navbar-expand-lg"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a href="index.html" class="navbar-brand">Admin</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="category.html" class="nav-link">Category</a>
+              </li>
+              <li class="nav-item">
+                <a href="product.html" class="nav-link">Product</a>
+              </li>
+              <li class="nav-item">
+                <a href="slider.html" class="nav-link">Slider</a>
+              </li>
+              <li class="nav-item">
+                <a href="role.html" class="nav-link">Role</a>
+              </li>
+              <li class="nav-item">
+                <a href="user.html" class="nav-link">User</a>
+              </li>
+              <li class="nav-item">
+                <a href="orders.html" class="nav-link">Orders</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Serhan Basozmen</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">My Account</a></li>
+                  <li><a href="#" class="dropdown-item">Logout</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="register.html" class="nav-link">Create Account</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-3">
+      <div class="row">
+        <div class="col-xl-3 col-md-2 mb-4">
+          <div class="card border-left-success shadow py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col">
+                  <div class="fw-bold text-primary text-uppercase mb-1">
+                    Sales
+                  </div>
+                  <div class="h5 mb-0 fw-bold">40.000₺</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-2 mb-4">
+          <div class="card border-left-primary shadow py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col">
+                  <div class="fw-bold text-primary text-uppercase mb-1">
+                    Order
+                  </div>
+                  <div class="h5 mb-0 fw-bold">142</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fa-solid fa-truck fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-2 mb-4">
+          <div class="card border-left-warning shadow py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col">
+                  <div class="fw-bold text-primary text-uppercase mb-1">
+                    Product Stock
+                  </div>
+                  <div class="h5 mb-0 fw-bold">293</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fa-solid fa-list fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-2 mb-4">
+          <div class="card border-left-primary shadow py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col">
+                  <div class="fw-bold text-primary text-uppercase mb-1">
+                    Messages
+                  </div>
+                  <div class="h5 mb-0 fw-bold">163</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fa-solid fa-message fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header pb-0">
+              <h5 class="card-title">Last Orders</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-strip mb-0">
+                  <thead class="table-secondary">
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Username</th>
+                      <th>Totally</th>
+                      <th>Date</th>
+                      <th>State</th>
+                      <th style="width: 40px"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5</td>
+                      <td>serhanbaba</td>
+                      <td>3000₺</td>
+                      <td>01/01/2026</td>
+                      <td>
+                        <span class="badge bg-primary">Awaiting Approval</span>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>ahmetk31l</td>
+                      <td>213₺</td>
+                      <td>07/02/2026</td>
+                      <td>
+                        <span class="badge bg-primary">Awaiting Approval</span>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>erdema35</td>
+                      <td>6053₺</td>
+                      <td>07/12/2026</td>
+                      <td>
+                        <span class="badge bg-primary">Awaiting Approval</span>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>emine245</td>
+                      <td>110₺</td>
+                      <td>02/03/2026</td>
+                      <td>
+                        <span class="badge bg-primary">Awaiting Approval</span>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>halilag23</td>
+                      <td>220₺</td>
+                      <td>01/12/2026</td>
+                      <td>
+                        <span class="badge bg-primary">Awaiting Approval</span>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-primary btn-sm">
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+      integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Orders</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar bg-dark border-bottom border-body navbar-expand-lg"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a href="index.html" class="navbar-brand">Admin</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="category.html" class="nav-link">Category</a>
+              </li>
+              <li class="nav-item">
+                <a href="product.html" class="nav-link">Product</a>
+              </li>
+              <li class="nav-item">
+                <a href="slider.html" class="nav-link">Slider</a>
+              </li>
+              <li class="nav-item">
+                <a href="role.html" class="nav-link">Role</a>
+              </li>
+              <li class="nav-item">
+                <a href="user.html" class="nav-link">User</a>
+              </li>
+              <li class="nav-item">
+                <a href="orders.html" class="nav-link active">Orders</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Serhan Basozmen</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">My Account</a></li>
+                  <li><a href="#" class="dropdown-item">Logout</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="register.html" class="nav-link">Create Account</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-3">
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div
+              class="card-header py-1 d-flex justify-content-between align-items-center"
+            >
+              <h5 class="card-title">Order No: #5</h5>
+              <span class="badge bg-success p-2">Delivered</span>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-strip mb-2">
+                  <thead class="table-secondary">
+                    <tr>
+                      <th style="width: 40px">Id</th>
+                      <th style="width: 80px">Picture</th>
+                      <th>Product Name</th>
+                      <th>Price</th>
+                      <th>Total</th>
+                      <th>Totally</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td><img src="img/1.jpeg" alt="" class="img-fluid" /></td>
+                      <td>Apple Watch Series 11</td>
+                      <td>42.562₺</td>
+                      <td>2</td>
+                      <td>85.124₺</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><img src="img/2.jpeg" alt="" class="img-fluid" /></td>
+                      <td>Apple Watch Series 10</td>
+                      <td>40.250₺</td>
+                      <td>1</td>
+                      <td>40.250₺</td>
+                    </tr>
+                    <tr class="fw-bold">
+                      <td colspan="4"></td>
+                      <td>Subtotal</td>
+                      <td>125.374₺</td>
+                    </tr>
+                    <tr class="fw-bold">
+                      <td colspan="4"></td>
+                      <td>Tax</td>
+                      <td>374₺ (0.1%)</td>
+                    </tr>
+                    <tr class="fw-bold">
+                      <td colspan="4"></td>
+                      <td>Cargo</td>
+                      <td>Free Delivery</td>
+                    </tr>
+                    <tr class="fw-bold">
+                      <td colspan="4"></td>
+                      <td>Totally</td>
+                      <td>125.748₺</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered mb-0">
+                  <tr>
+                    <td style="width: 150px">Delivery Date</td>
+                    <td>10/10/2026 10.00</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 150px">Name Surname</td>
+                    <td>Ahmet Ay</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 150px">Delivery Address</td>
+                    <td>Ankara/Çankaya/Tunali Hİlmi Cd./NO:156/12</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 150px">İnvoice Address</td>
+                    <td>Ankara/Çankaya/Tunali Hİlmi Cd./NO:156/12</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 150px">Payment</td>
+                    <td>1432-15**-****-****(Visa)</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+      integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

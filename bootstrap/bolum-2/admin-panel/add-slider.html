@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Slider</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar bg-dark border-bottom border-body navbar-expand-lg"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a href="index.html" class="navbar-brand">Admin</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="category.html" class="nav-link">Category</a>
+              </li>
+              <li class="nav-item">
+                <a href="product.html" class="nav-link">Product</a>
+              </li>
+              <li class="nav-item">
+                <a href="slider.html" class="nav-link active">Slider</a>
+              </li>
+              <li class="nav-item">
+                <a href="role.html" class="nav-link">Role</a>
+              </li>
+              <li class="nav-item">
+                <a href="user.html" class="nav-link">User</a>
+              </li>
+              <li class="nav-item">
+                <a href="orders.html" class="nav-link">Orders</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >Serhan Basozmen</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">My Account</a></li>
+                  <li><a href="#" class="dropdown-item">Logout</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="register.html" class="nav-link">Create Account</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-3">
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div
+              class="card-header py-1 d-flex justify-content-between align-items-center"
+            >
+              <h5 class="card-title">Add Slider</h5>
+              <a href="slider.html" class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-list"></i>
+              </a>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row mb-3">
+                  <label for="SliderPicture" class="col-sm-2 col-form-label"
+                    >Current Picture</label
+                  >
+                  <div class="col sm-10">
+                    <img
+                      src="img/slider-1.jpeg"
+                      class="img-fluid rounded"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="SliderHeader" class="col-sm-2 col-form-label"
+                    >Slider Header</label
+                  >
+                  <div class="col sm-10">
+                    <input type="text" id="ProductPrice" class="form-control" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="SliderDescription" class="col-sm-2 col-form-label"
+                    >Slider Description</label
+                  >
+                  <div class="col sm-10">
+                    <textarea
+                      id="SliderDescription "
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="Picture" class="col-sm-2 col-form-label"
+                    >Picture</label
+                  >
+                  <div class="col sm-10">
+                    <input type="file" id="Picture" class="form-control" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="Index" class="col-sm-2 col-form-label"
+                    >Index</label
+                  >
+                  <div class="col sm-10">
+                    <input type="number" id="Index" class="form-control" />
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="Active" class="col-sm-2 col-form-label"
+                    >Active</label
+                  >
+                  <div class="col sm-10">
+                    <input
+                      type="checkbox"
+                      id="Active"
+                      class="form-check-input"
+                      checked
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+      integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
