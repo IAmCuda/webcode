@@ -47,4 +47,4 @@ console.log(siparis2_toplam);
 let toplam_sipariş = siparis1_toplam + siparis2_toplam;
 
 console.log("toplam sipariş:", toplam_sipariş);
-let sipariş;
+let sipariş = [siparis_1, siparis_2];
