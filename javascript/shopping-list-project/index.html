@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.rtl.min.css"
+      integrity="sha512-4W9f7EnJgM33kD11Ux2XNF9DSpJ7LoQXCvBNhzKTorRSyjPHmjXhHMZMafIYqYvTNWahUk2ulNsarMMLDEv4zA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Shopping List</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Shopping List</h1>
+      <form class="shopping-form border rounded p-3 mb-3">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Eleman Ekle"
+            id="item_name"
+          />
+          <button class="btn btn-primary" type="submit">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+      </form>
+
+      <div class="alert alert-danger">No items</div>
+
+      <div class="filter-buttons border rounded p-3 mb-3">
+        <button item-filter="all" class="btn btn-primary">All</button>
+        <button item-filter="incomplete" class="btn btn-secondary">
+          Incomplete
+        </button>
+        <button item-filter="completed" class="btn btn-secondary">
+          Completed
+        </button>
+      </div>
+
+      <ul class="shopping-list list-unstyled"></ul>
+      <button class="btn btn-outline-danger clear">Clear</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
