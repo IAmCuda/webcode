@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     //es5
+      //   function selam() {
+      //     console.log("merhabaa");
+      //   }
+
+      var selamES5 = function (isim) {
+        console.log("merhabaa " + isim);
+      };
+      selamES5("ayşee");
+      //es6 - arrow function
+      //   const selamES6 = () => console.log("miribaa");
+      const selamES6 = (isim) => {
+        console.log("miribaa " + isim);
+      };
+
+      selamES6("mehmoo");
+
+      //es5
+      var toplamES5 = function (a, b) {
+        return a + b;
+      };
+      var sonuc = toplamES5(10, 64);
+      console.log(sonuc);
+
+      //es6
+      //   const toplamES6 = (a, b) => a + b;
+      const toplamES6 = (a, b) => {
+        return a + b;
+      };
+      sonuc = toplamES6(64, 47);
+      console.log(sonuc);
+    </script>
+  </body>
+</html>

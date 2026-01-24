@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Kisi => k1,k2
+      // Ogrenci => o1,o2
+      // Ogretmen
+
+      //parent class
+      class Kisi {
+        constructor(ad, dogumYili) {
+          console.log("kisi constructor");
+          this.ad = ad;
+          this.dogumYili = dogumYili;
+        }
+        yasHesapla() {
+          let tarih = new Date().getFullYear();
+          return tarih - this.dogumYili;
+        }
+
+        kendiniTanit() {
+          return `benim adım ${this.ad}`;
+        }
+      }
+
+      //child class
+      class Ogrenci extends Kisi {
+        constructor(ad, dogumYili, okulNo) {
+          console.log("ogrenci constructor");
+          super(ad, dogumYili);
+          this.okulNo = okulNo;
+        }
+
+        dersCalis() {
+          return `${this.ad} ders çalışıyor.`;
+        }
+        kendiniTanit() {
+          return `benim adım ${this.ad} ve okul numaran ${this.okulNo}`;
+        }
+      }
+
+      class Ogretmen extends Kisi {
+        constructor(ad, dogumYili, brans) {
+          console.log("ogretmen constructor");
+          super(ad, dogumYili);
+          this.brans = brans;
+        }
+
+        dersAnlat() {
+          return `${this.ad} matematik dersini anlatır.`;
+        }
+        kendiniTanit() {
+          return `benim adım ${this.ad} ve branşım ${this.brans}`;
+        }
+      }
+
+      let kisi = new Kisi("erdem", 1997);
+      let ogrenci = new Ogrenci("enbiya", 1998, 662);
+      let ogretmen = new Ogretmen("Fatma", " ", "matematik");
+
+      //   console.log(kisi.yasHesapla());
+      //   console.log(ogrenci.yasHesapla());
+      //   console.log(ogrenci.dersCalis());
+
+      console.log(kisi.kendiniTanit());
+      console.log(ogrenci.kendiniTanit());
+      console.log(`${ogretmen.kendiniTanit()}  ${ogretmen.dersAnlat()}`);
+    </script>
+  </body>
+</html>

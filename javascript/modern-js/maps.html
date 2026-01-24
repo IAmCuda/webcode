@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const students = new Map();
+
+      let user = { username: "serhanbabo" };
+
+      students.set(1, "ali yılmaz");
+      students.set(254654237534, "ahmeet");
+      students.set(true, "afsfa46");
+      students.set(user, "serhan babo");
+
+      console.log(students.get(1));
+      console.log(students.get(254654237534));
+      console.log(students.get(true));
+      console.log(students.get(user));
+
+      let sonuc;
+
+      sonuc = students.size;
+      sonuc = students.has(2);
+      //   students.delete(1);
+      sonuc = students.size;
+      //   students.clear();
+
+      //   for (let x of students.keys()) {
+      //     console.log(x);
+      //   }
+
+      //   for (let x of students.values()) {
+      //     console.log(x);
+      //   }
+
+      for (let [key, value] of students.entries()) {
+        console.log(key, value);
+      }
+    </script>
+  </body>
+</html>
