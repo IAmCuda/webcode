@@ -1,0 +1,12 @@
+.title {
+  color: blueviolet;
+}
+
+.new {
+  border: 1px solid rgb(129, 35, 91);
+  padding: 10px;
+}
+
+.f30 {
+  font-size: 30px;
+}
