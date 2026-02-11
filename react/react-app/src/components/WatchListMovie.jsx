@@ -1,4 +1,4 @@
-export default function Movie({ movieObj, onAddToWatchList }) {
+export default function WatchListMovie({ movieObj, onRemoveFromWatchList }) {
   return (
     <div className="col">
       {movieObj.is_active && (
@@ -17,9 +17,9 @@ export default function Movie({ movieObj, onAddToWatchList }) {
             )}
             <button
               className="btn btn-link fs-5 text-danger position-absolute top-0 start-0"
-              onClick={() => onAddToWatchList(movieObj)}
+              onClick={() => onRemoveFromWatchList(movieObj)}
             >
-              <i className="bi bi-plus-circle"></i>
+              <i className="bi bi-dash-circle"></i>
             </button>
           </div>
         </div>

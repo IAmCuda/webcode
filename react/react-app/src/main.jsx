@@ -5,6 +5,7 @@ import App from "./App";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

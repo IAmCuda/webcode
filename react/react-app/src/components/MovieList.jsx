@@ -1,23 +1,31 @@
 import Movie from "./Movie";
-import { movie_list } from "../data";
 
-export default function MovieList() {
+export default function MovieList({ movies, onAddToWatchList }) {
   return (
-    <div className="container">
-      <h2 className="title">Movie List</h2>
-
-      {movie_list.filter((m) => m.is_active).length == 0 ? (
-        <div>Film Not Found</div>
-      ) : (
-        <div
-          id="movie-list"
-          className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"
-        >
-          {movie_list.map((m, index) => (
-            <Movie key={index} movieObj={m} />
-          ))}
+    <div className="container my-3">
+      <div className="card">
+        <div className="card-header">
+          <h2 className="title h5 mb-0">Movie List</h2>
         </div>
-      )}
+        <div className="card-body">
+          {movies.filter((m) => m.is_active).length == 0 ? (
+            <div>Film Not Found</div>
+          ) : (
+            <div
+              id="movie-list"
+              className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"
+            >
+              {movies.map((m, index) => (
+                <Movie
+                  key={index}
+                  movieObj={m}
+                  onAddToWatchList={onAddToWatchList}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

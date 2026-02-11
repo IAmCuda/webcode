@@ -1,15 +1,11 @@
-export default function Header() {
+export default function Header({ children }) {
   return (
     <div id="header">
       <nav
         className="navbar navbar-expand-lg bg-dark border-bottom bord-body"
         data-bs-theme="dark"
       >
-        <div className="container">
-          <a href="#" className="navbar-brand">
-            Movie App
-          </a>
-        </div>
+        <div className="container">{children}</div>
       </nav>
     </div>
   );
