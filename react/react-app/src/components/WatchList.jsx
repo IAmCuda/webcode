@@ -14,12 +14,12 @@ export default function WatchList({
               <h2 className="title h5 mb-0">Watch List</h2>
             </div>
             <div className="card-body">
-              {movies.filter((m) => m.is_active).length == 0 ? (
+              {movies.length == 0 ? (
                 <div>Film Not Found</div>
               ) : (
                 <div
                   id="movie-list"
-                  className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"
+                  className="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-2 g-lg-3"
                 >
                   {movies.map((m, index) => (
                     <WatchListMovie

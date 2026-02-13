@@ -8,7 +8,7 @@ export default function MovieList({ movies, onAddToWatchList }) {
           <h2 className="title h5 mb-0">Movie List</h2>
         </div>
         <div className="card-body">
-          {movies.filter((m) => m.is_active).length == 0 ? (
+          {movies.length == 0 ? (
             <div>Film Not Found</div>
           ) : (
             <div

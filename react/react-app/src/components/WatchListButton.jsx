@@ -8,7 +8,7 @@ export default function WatchListButton({ movies, onSetIsWatchListOpen }) {
       >
         <i className="bi bi-heart"></i>
         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {movies.filter((m) => m.is_active).length}
+          {movies.length}
         </span>
       </button>
     </div>
