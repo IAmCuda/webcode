@@ -1,114 +1,26 @@
-import { useEffect, useState } from "react";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/Home";
+import Movies from "./pages/Movies";
+import MovieDetails from "./pages/MovieDetails";
+import MainLayout from "./layouts/MainLayout";
+import SearchResults from "./pages/SearchResults";
 
-import Logo from "./components/Logo";
-import Loading from "./components/Loading";
-import ErrorMessage from "./components/ErrorMessage";
-import SearchForm from "./components/SearchForm";
-import WatchListButton from "./components/WatchListButton";
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "movies", element: <Movies /> },
+      { path: "movies/:id", element: <MovieDetails /> },
+      { path: "search", element: <SearchResults /> },
+    ],
+  },
+]);
 
-import MovieList from "./components/MovieList";
-import WatchList from "./components/WatchList";
-
-const api_key = "d49167f160dcc2217588a3d480b91965";
-const page = 1;
-const query = "avengers";
-const language = "en-US";
-
-export default function App() {
-  const [movies, setMovies] = useState([]);
-  const [watchListMovies, setWatchListMovies] = useState([]);
-  const [isWatchListOpen, setIsWatchListOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(" ");
-  const [searchQuery, setSearchQuery] = useState(query);
-
-  useEffect(() => {
-    async function getMovies() {
-      setIsLoading(true);
-
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchQuery}&page=${page}&language=${language}`,
-        );
-
-        if (response.status === 404) {
-          throw new Error("Movies not found");
-        } else if (response.status === 401) {
-          throw new Error("Unauthorized access. Please check your API key.");
-        } else if (response.status === 500) {
-          throw new Error("Server error. Please try again later.");
-        } else if (response.status === 429) {
-          throw new Error("Too many requests. Please wait and try again.");
-        } else if (response.status === 400) {
-          throw new Error("Bad request. Please check your query parameters.");
-        }
-
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const data = await response.json();
-
-        if (data.results) {
-          setMovies(data.results);
-        }
-        setError("");
-      } catch (error) {
-        setError(error.message);
-      }
-
-      setIsLoading(false);
-    }
-
-    if (searchQuery.length < 3) {
-      setMovies([]);
-      setError("");
-      return;
-    }
-
-    getMovies();
-  }, [searchQuery]);
-
-  function handleAddToWatchList(movie) {
-    const isAddedToList = watchListMovies.map((i) => i.id).includes(movie.id);
-
-    if (!isAddedToList) {
-      setWatchListMovies((movies) => [...movies, movie]);
-    }
-  }
-
-  function handleRemoveFromWatchList(movie) {
-    setWatchListMovies((movies) => movies.filter((m) => m.id !== movie.id));
-  }
-
-  return (
-    <>
-      <Header>
-        <Logo />
-        <SearchForm searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-        <WatchListButton
-          movies={watchListMovies}
-          onSetIsWatchListOpen={setIsWatchListOpen}
-        />
-      </Header>
-
-      <Main>
-        <WatchList
-          movies={watchListMovies}
-          isWatchListOpen={isWatchListOpen}
-          onRemoveFromWatchList={handleRemoveFromWatchList}
-        />
-
-        {isLoading && <Loading />}
-        {!isLoading && !error && (
-          <MovieList movies={movies} onAddToWatchList={handleAddToWatchList} />
-        )}
-        {error && <ErrorMessage message={error} />}
-      </Main>
-      <Footer />
-    </>
-  );
+function App() {
+  return <RouterProvider router={routes} />;
 }
+
+export default App;
