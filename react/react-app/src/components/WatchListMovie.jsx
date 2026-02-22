@@ -1,4 +1,4 @@
-export default function WatchListMovie({ movieObj, onRemoveFromWatchList }) {
+export default function WatchListMovie({ movieObj, RemoveFromWatchList }) {
   return (
     <div className="col">
       {
@@ -6,12 +6,12 @@ export default function WatchListMovie({ movieObj, onRemoveFromWatchList }) {
           <img
             src={"https://image.tmdb.org/t/p/original/" + movieObj.poster_path}
             alt=""
-            className="card-img-top"
+            className="img-fluid rounded"
           />
           <div>
             <button
               className="btn btn-link fs-5 text-danger position-absolute top-0 start-0"
-              onClick={() => onRemoveFromWatchList(movieObj)}
+              onClick={() => RemoveFromWatchList(movieObj)}
             >
               <i className="bi bi-dash-circle"></i>
             </button>

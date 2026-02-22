@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
 import SimilarMovies from "./SimilarMovies";
 import Actors from "../components/Actors";
+import { UserContext } from "../contexts/UserContext";
 
 const apiUrl = "https://api.themoviedb.org/3";
 const api_key = "d49167f160dcc2217588a3d480b91965";
@@ -15,6 +16,10 @@ export default function MovieDetails() {
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const { addToWatchList, removeFromWatchList, watchList } =
+    useContext(UserContext);
+
+  const isAdded = watchList?.find((i) => i.id == movie?.id);
 
   useEffect(() => {
     async function getMovie() {
@@ -82,7 +87,21 @@ export default function MovieDetails() {
                   <span className="badge bg-warning">
                     {movie.vote_average * 10}%
                   </span>
+                  <span className="badge bg-danger fs-6 ms-2 pointer">
+                    {isAdded ? (
+                      <i
+                        className="bi bi-heart-fill"
+                        onClick={() => removeFromWatchList(movie)}
+                      ></i>
+                    ) : (
+                      <i
+                        className="bi bi-heart"
+                        onClick={() => addToWatchList(movie)}
+                      ></i>
+                    )}
+                  </span>
                 </p>
+
                 {movie.overview && (
                   <p className="lead">
                     <strong>Overview:</strong> {movie.overview}

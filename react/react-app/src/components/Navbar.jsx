@@ -1,12 +1,14 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import Logo from "./Logo";
 import SearchForm from "./SearchForm";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import ThemeSelector from "./ThemeSelector";
+import { UserContext } from "../contexts/UserContext";
 
 export default function Navbar() {
   const { theme, setTheme } = useContext(ThemeContext);
+  const { watchList } = useContext(UserContext);
 
   return (
     <nav
@@ -41,6 +43,15 @@ export default function Navbar() {
             </li>
           </ul>
           <SearchForm />
+          <Link
+            to="/watchList"
+            className={`btn btn-${theme} border position-relative ms-1`}
+          >
+            <i className="bi bi-heart-fill"></i>
+            <span className="position-absolute top-0 start-100 badge rounded-pill bg-danger translate-middle">
+              {watchList.length}
+            </span>
+          </Link>
           <ThemeSelector />
         </div>
       </div>
