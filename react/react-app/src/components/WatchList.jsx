@@ -1,6 +1,6 @@
 import WatchListMovie from "./WatchListMovie";
 
-export default function WatchList({ movies, title, RemoveFromWatchList }) {
+export default function WatchList({ movies, title, removeFromWatchList }) {
   return (
     <>
       {
@@ -17,7 +17,7 @@ export default function WatchList({ movies, title, RemoveFromWatchList }) {
                 <WatchListMovie
                   key={index}
                   movieObj={m}
-                  RemoveFromWatchList={RemoveFromWatchList}
+                  removeFromWatchList={removeFromWatchList}
                 />
               ))}
             </div>

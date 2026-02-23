@@ -1,4 +1,4 @@
-export default function WatchListMovie({ movieObj, RemoveFromWatchList }) {
+export default function WatchListMovie({ movieObj, removeFromWatchList }) {
   return (
     <div className="col">
       {
@@ -11,7 +11,7 @@ export default function WatchListMovie({ movieObj, RemoveFromWatchList }) {
           <div>
             <button
               className="btn btn-link fs-5 text-danger position-absolute top-0 start-0"
-              onClick={() => RemoveFromWatchList(movieObj)}
+              onClick={() => removeFromWatchList(movieObj)}
             >
               <i className="bi bi-dash-circle"></i>
             </button>

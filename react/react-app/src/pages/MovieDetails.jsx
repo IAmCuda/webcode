@@ -84,7 +84,7 @@ export default function MovieDetails() {
                   {movie.runtime} minutes
                 </p>
                 <p>
-                  <span className="badge bg-warning">
+                  <span className="badge bg-warning fs-6">
                     {movie.vote_average * 10}%
                   </span>
                   <span className="badge bg-danger fs-6 ms-2 pointer">
