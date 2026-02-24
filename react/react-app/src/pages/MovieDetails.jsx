@@ -41,6 +41,7 @@ export default function MovieDetails() {
       }
 
       setIsLoading(false);
+      window.scrollTo(0, 0);
     }
 
     getMovie();

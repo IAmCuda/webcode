@@ -1,71 +1,72 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import Input from "../components/Input";
+import useInput from "../hooks/UseInput";
+import { hasMinLength, isEmail, isNotEmpty } from "../utils/validations";
 
 export default function Login() {
   const { theme } = useContext(ThemeContext);
   const cardColor = theme === "dark" ? "text-bg-dark" : "text-bg-light";
   const btnColor = theme === "dark" ? "light" : "dark";
 
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
+  const {
+    value: emailValue,
+    handleInputBlur: handleEmailBlur,
+    handleInputChange: handleEmailChange,
+    hasError: emailHasError,
+  } = useInput("", (value) => isEmail(value) && isNotEmpty(value));
 
-  const initialValues = { email: "", password: "" };
-  const [values, setValues] = useState(initialValues);
-
-  function handleInputChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  }
+  const {
+    value: passwordValue,
+    handleInputBlur: handlePasswordBlur,
+    handleInputChange: handlePasswordChange,
+    hasError: passwordHasError,
+  } = useInput("", (value) => hasMinLength(value, 5));
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(values);
+
+    if (emailHasError || passwordHasError) {
+      return;
+    }
+
+    console.log(emailValue, passwordValue);
   }
 
   return (
     <div className="container py-3">
       <div className="row">
-        <div className="col-7 mx-auto">
+        <div className="col-12">
           <div className={`card border  ${cardColor}`}>
             <div className="card-header">
               <h1 className="h4 mb-0">Login</h1>
             </div>
             <div className="card-body">
-              {values.email}
-              {values.password}
-
               <form onSubmit={handleFormSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    value={values.email}
-                    onChange={handleInputChange}
-                    name="email"
-                    id="email"
-                    className="form-control"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    value={values.password}
-                    onChange={handleInputChange}
-                    name="password"
-                    id="password"
-                    className="form-control"
-                  />
-                </div>
+                <Input
+                  id="email"
+                  name="email"
+                  labelText="Email"
+                  error={emailHasError && "Please enter a valid email address."}
+                  type="email"
+                  value={emailValue}
+                  onChange={handleEmailChange}
+                  onBlur={handleEmailBlur}
+                />
+
+                <Input
+                  id="password"
+                  name="password"
+                  labelText="Password"
+                  error={
+                    passwordHasError && "Please enter minimum 5 characters."
+                  }
+                  type="password"
+                  value={passwordValue}
+                  onChange={handlePasswordChange}
+                  onBlur={handlePasswordBlur}
+                />
+
                 <button className={`btn btn-outline-${btnColor}`}>
                   Submit
                 </button>

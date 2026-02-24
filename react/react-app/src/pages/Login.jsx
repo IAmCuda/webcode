@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function Login() {
@@ -9,10 +9,32 @@ export default function Login() {
   const email = useRef();
   const password = useRef();
 
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(email.current.value);
-    console.log(password.current.value);
+
+    setEmailError(false);
+    setPasswordError(false);
+
+    const emailVal = email.current.value;
+    const passwordVal = password.current.value;
+
+    const emailIsInValid = !emailVal.includes("@");
+    const passwordIsValid = passwordVal.length <= 5;
+
+    if (emailIsInValid) {
+      setEmailError(true);
+      return;
+    }
+
+    if (passwordIsValid) {
+      setPasswordError(true);
+      return;
+    }
+
+    console.log(emailVal, passwordVal);
 
     email.current.value = "";
     password.current.value = "";
@@ -21,13 +43,13 @@ export default function Login() {
   return (
     <div className="container py-3">
       <div className="row">
-        <div className="col-7 mx-auto">
+        <div className="col-12">
           <div className={`card border  ${cardColor}`}>
             <div className="card-header">
               <h1 className="h4 mb-0">Login</h1>
             </div>
             <div className="card-body">
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit} noValidate>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
                     Email
@@ -39,6 +61,11 @@ export default function Login() {
                     id="email"
                     className="form-control"
                   />
+                  {emailError && (
+                    <div className="invalid-feedback d-block">
+                      Please enter a valid email address.
+                    </div>
+                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
@@ -51,6 +78,11 @@ export default function Login() {
                     id="password"
                     className="form-control"
                   />
+                  {passwordError && (
+                    <div className="invalid-feedback d-block">
+                      Please enter minimum 5 characters.
+                    </div>
+                  )}
                 </div>
                 <button className={`btn btn-outline-${btnColor}`}>
                   Submit

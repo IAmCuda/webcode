@@ -7,7 +7,7 @@ import MainLayout from "./layouts/MainLayout";
 import SearchResults from "./pages/SearchResults";
 import UserWatchList from "./pages/UserWatchList";
 import Register from "./pages/Register";
-import Login from "./pages/Login";
+import Login from "./pages/LoginState";
 
 const routes = createBrowserRouter([
   {
