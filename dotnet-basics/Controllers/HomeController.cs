@@ -7,23 +7,23 @@ public class HomeController:Controller
     //localhoost:5102
     //localhoost:5102/home
     //localhoost:5102/home/index
-public string Index()
+public ActionResult Index()
     {
-        return "Home/Index";
+        return View(); // Views/Home/Index.cshtml
     }
 
 
     //localhoost:5102/home/about
 
-    public string About()
+    public ActionResult About()
     {
-        return "Home/about";
+        return View(); // Views/Home/About.cshtml
     }
 
     //localhoost:5102/home/contact
 
-    public string Contact()
+    public ActionResult Contact()
     {
-        return "Home/contact";
+        return  View(); // Views/Home/Contact.cshtml
     }
 }

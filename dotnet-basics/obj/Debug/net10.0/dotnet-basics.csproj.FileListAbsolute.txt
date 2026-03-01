@@ -19,9 +19,7 @@ C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\dotnet-basics.
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
-C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\scopedcss\bundle\dotnet-basics.styles.css
-C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\scopedcss\projectbundle\dotnet-basics.bundle.scp.css
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\69d5w6ln61-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\tiik2dhb07-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\8c9qk0ic06-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
@@ -84,8 +82,6 @@ C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\mmy
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\9r2jylo90o-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\jlcdmtnya2-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\437kvdaoj3-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\7roqu9zggu-{0}-swc128mfx1-swc128mfx1.gz
-C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\compressed\lvt4xwmham-{0}-swc128mfx1-swc128mfx1.gz
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\Serhan\Desktop\Languages\dotnet-basics\obj\Debug\net10.0\staticwebassets.development.json

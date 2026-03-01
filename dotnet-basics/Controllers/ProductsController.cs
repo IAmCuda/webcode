@@ -4,22 +4,22 @@ namespace dotnet_basics.Controllers;
     public class ProductsController : Controller
     {
  // localhost:5102/products
-        public string Index()
+        public ActionResult Index()
         {
-            return "Products/Index";
+            return View(); // Views/Products/Index.cshtml
         }
 
  // localhost:5102/products/list
-        public string List()
+        public ActionResult List()
     {
-        return "Products/List";
+        return View(); // Views/Products/List.cshtml
     }
 
 
  // localhost:5102/products/details
-  public string Details()
+  public ActionResult Details()
     {
-        return "Products/Details";
+        return View(); // Views/Products/Details.cshtml
     }
 
     }

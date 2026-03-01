@@ -6,23 +6,23 @@ namespace dotnet_basics.Controllers;
     {
          //localhoost:5102/course
          //localhoost:5102/course/index
-         public string Index()
+         public ActionResult Index()
     {
-        return "Course/Index";
+        return View();  // Views/Course/Index.cshtml
     }
 
 
          //localhoost:5102/course/details
-  public string Details()
+  public ActionResult Details()
     {
-        return "Course/details";
+        return View(); // Views/Course/Details.cshtml
     }
 
 
          //localhoost:5102/course/list
-    public string List()
+    public ActionResult List()
     {
-        return "Course/List";
+        return View(); // Views/Course/List.cshtml
     }
 
     }
