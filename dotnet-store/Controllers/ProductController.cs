@@ -18,10 +18,27 @@ public class ProductController:Controller
     {
         return View();
     }
-    public ActionResult List(string url)
+
+    
+    public ActionResult List(string url, string q)
     {
-        var products = _context.Products.Where(i => i.IsActive && i.Category.Url == url).ToList();
-        return View(products);
+        var query = _context.Products.Where(i => i.IsActive);  // Queryable
+
+        if(!string.IsNullOrEmpty(url))
+        {
+            //filtering
+            query = query.Where(i => i.Category.Url == url);
+        }
+
+           if(!string.IsNullOrEmpty(q))
+        {
+            //filtering
+              query = query.Where(i => i.ProductName.ToLower().Contains(q.ToLower()));
+
+              ViewData["q"]=q;
+        }
+
+        return View(query.ToList());
     }
 
     public ActionResult Details (int id)
