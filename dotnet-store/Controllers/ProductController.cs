@@ -76,14 +76,21 @@ public class ProductController:Controller
 
     public ActionResult Create()
     {
-        // ViewBag.Categories = _context.Categories.ToList();
         ViewBag.Categories =  new SelectList(_context.Categories.ToList(), "Id","CategoryId");
         return View();
     }
 
     [HttpPost]
-    public ActionResult Create(ProductCreateModel model)
+    public async Task<ActionResult> Create(ProductCreateModel model)
     {
+        var fileName = Path.GetRandomFileName() + ".jpg";
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
+        
+        using(var stream = new FileStream(path, FileMode.Create))
+        {
+            await model.Image!.CopyToAsync(stream);
+        }
+
         var entity = new Product()
         {
                 ProductName = model.ProductName,
@@ -92,7 +99,7 @@ public class ProductController:Controller
                 IsActive = model.IsActive,
                 Homepage = model.Homepage,
                 CategoryId = model.CategoryId,
-                Image = "1.jpeg" //upload
+                Image = fileName  
         };
 
         _context.Products.Add(entity);
@@ -113,7 +120,7 @@ public class ProductController:Controller
                 Price =i.Price,
                 CategoryId=i.CategoryId,
                 Explanation= i.Explanation,
-                Image=i.Image
+                ImageName=i.Image
            
         }).FirstOrDefault(i => i.Id == id);
 
@@ -123,7 +130,7 @@ public class ProductController:Controller
 
 
     [HttpPost]
-    public ActionResult Edit(int id ,ProductEditModel model)
+    public async Task<ActionResult> Edit(int id ,ProductEditModel model)
     {
         if(id != model.Id)
         {
@@ -134,10 +141,23 @@ public class ProductController:Controller
         
         if(entity != null)
         {
+            if(model.ImageFile != null)
+            {
+            var fileName = Path.GetRandomFileName() + ".jpg";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
+            
+            using(var stream = new FileStream(path, FileMode.Create))
+            {
+                await model.ImageFile!.CopyToAsync(stream);
+            }
+
+            entity.Image = fileName;
+
+        }
+
             entity.ProductName = model.ProductName;
             entity.Explanation = model.Explanation;
             entity.Price = model.Price;
-            // entity.Image = model.Image;
             entity.IsActive = model.IsActive;
             entity.Homepage = model.Homepage;
             entity.CategoryId = model.CategoryId;

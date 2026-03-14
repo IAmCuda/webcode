@@ -27,11 +27,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapStaticAssets();
+// app.MapStaticAssets();
+app.UseStaticFiles();
 
-// products/phone
-// products/electronic
-// products/major appliances
 
 app.MapControllerRoute(
     name:"products_by_category",

@@ -3,6 +3,7 @@
     Layout = "_AdminLayout";
     }
     
+  <form method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-9">
           <div class="card shadow">
@@ -15,7 +16,6 @@
               </a>
             </div>
             <div class="card-body">
-              <form method="post">
                 <input type="hidden" name="Id" value="@Model.Id">
                 <div class="row mb-3">
                   <label asp-for="ProductName" class="col-sm-2 col-form-label">Product Name</label>
@@ -77,16 +77,16 @@
                     <button type="submit" class="btn btn-primary">Save</button>
                   </div>
                 </div>
-              </form>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card shadow">
             <div class="card-body">
-              <img src="~/img/@Model.Image" class="img-thumbnail" alt="" />
-              <input type="file" class="form-control mt-3" />
+              <img src="~/img/@Model.ImageName" class="img-thumbnail" alt="" />
+              <input asp-for="ImageFile" class="form-control mt-3" />
             </div>
           </div>
         </div>
       </div>
+  </form>
