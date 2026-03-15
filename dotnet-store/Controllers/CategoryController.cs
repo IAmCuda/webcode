@@ -34,16 +34,20 @@ public class CategoryController:Controller
     [HttpPost]
     public ActionResult Create(CategoryCreateModel model)
     {
-        var entity = new Category
-        {
-            CategoryId = model.CategoryId,
-            Url= model.Url
-        };
+            if(ModelState.IsValid)
+            {
+            var entity = new Category
+            {
+                CategoryId = model.CategoryId,
+                Url= model.Url
+            };
 
-        _context.Categories.Add(entity);
-        _context.SaveChanges();
-        
-        return RedirectToAction("Index");
+            _context.Categories.Add(entity);
+            _context.SaveChanges();
+            
+            return RedirectToAction("Index");
+        }
+        return View (model);
     }
 
     public ActionResult Edit(int id )
@@ -68,6 +72,11 @@ public class CategoryController:Controller
             return RedirectToAction("Index");
         }
 
+        if(ModelState.IsValid)
+        {
+            
+        
+
         var entity = _context.Categories.FirstOrDefault(i => i.Id == model.Id);
 
         if(entity != null)
@@ -81,9 +90,48 @@ public class CategoryController:Controller
 
             return RedirectToAction("Index");
         }
+    }
 
        return View(model);
    
+    }
+
+    public ActionResult Delete(int? id)
+    {
+        if(id == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        var entity = _context.Categories.FirstOrDefault(i => i.Id == id);
+
+        if(entity != null)
+        {
+          return View(entity);
+        }
+            return RedirectToAction("Index");
+    }
+
+   [HttpPost]
+    public ActionResult DeleteConfirm(int? id)
+    {
+        if(id == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        var entity = _context.Categories.FirstOrDefault(i => i.Id == id);
+
+        if(entity != null)
+        {
+            _context.Categories.Remove(entity);
+            _context.SaveChanges();
+
+
+             TempData["Message"] = $"{entity.CategoryId} category deleted.";            
+
+        }
+            return RedirectToAction("Index");
     }
 
 }

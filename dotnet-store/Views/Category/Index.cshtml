@@ -46,6 +46,17 @@
                         <a href="product.html" class="btn btn-primary btn-sm">
                           <i class="fa-solid fa-right-long"></i>
                         </a>
+                        @if(cat.ProductNumber == 0 )
+                         {
+                          <a
+                           asp-controller="Category"
+                           asp-action="Delete" 
+                           asp-route-id="@cat.Id"
+                          class="btn btn-danger btn-sm"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </a>
+                         }
                       </td>
                     </tr>
                     }

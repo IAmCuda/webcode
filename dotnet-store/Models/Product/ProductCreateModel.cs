@@ -2,16 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace dotnet_store.Models;
 
-public class ProductCreateModel
+public class ProductCreateModel : ProductModel
 {
- [Display(Name ="Product Name")]
-public string ProductName { get; set; } = null!;
- [Display(Name ="Product Price")]
-public double Price { get; set; }
- [Display(Name ="Product Image")]
-public IFormFile? Image { get; set; }
-public string? Explanation { get; set; }
-public bool IsActive { get; set; }
-public bool Homepage { get; set; }
-public int CategoryId { get; set; }
+  
 }

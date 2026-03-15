@@ -16,7 +16,9 @@
               </a>
             </div>
             <div class="card-body">
+                <div asp-validation-summary="All" class="text-danger"></div>
                 <input type="hidden" name="Id" value="@Model.Id">
+                <input type="hidden" name="ImageName" value="@Model.ImageName">
                 <div class="row mb-3">
                   <label asp-for="ProductName" class="col-sm-2 col-form-label">Product Name</label>
                   <div class="col sm-10">
@@ -24,6 +26,7 @@
                       asp-for="ProductName"
                       class="form-control"
                     />
+                     <span asp-validation-for="ProductName" class="text-danger"></span>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -44,6 +47,7 @@
                     ></label>
                   <div class="col sm-10">
                     <input asp-for="Price" class="form-control" />
+                     <span asp-validation-for="Price" class="text-danger"></span>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -70,6 +74,7 @@
                     <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.Categories">
                       <option value="" selected>Choose</option>
                     </select>
+                     <span asp-validation-for="CategoryId" class="text-danger"></span>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -84,9 +89,14 @@
           <div class="card shadow">
             <div class="card-body">
               <img src="~/img/@Model.ImageName" class="img-thumbnail" alt="" />
-              <input asp-for="ImageFile" class="form-control mt-3" />
+              <input asp-for="Image" class="form-control mt-3" />
+               <span asp-validation-for="Image" class="text-danger"></span>
             </div>
           </div>
         </div>
       </div>
   </form>
+
+@section Scripts {  
+     @await Html.PartialAsync("_ValidationScriptsPartial")
+}

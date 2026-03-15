@@ -83,6 +83,13 @@ public class ProductController:Controller
     [HttpPost]
     public async Task<ActionResult> Create(ProductCreateModel model)
     {
+        if(model.Image == null || model.Image.Length==0) 
+        {
+            ModelState.AddModelError("Image","Choose Image");
+        }
+
+        if(ModelState.IsValid)
+    {
         var fileName = Path.GetRandomFileName() + ".jpg";
         var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
         
@@ -95,10 +102,10 @@ public class ProductController:Controller
         {
                 ProductName = model.ProductName,
                 Explanation = model.Explanation,
-                Price = model.Price,
+                Price = model.Price ?? 0,
                 IsActive = model.IsActive,
                 Homepage = model.Homepage,
-                CategoryId = model.CategoryId,
+                CategoryId = (int)model.CategoryId!,
                 Image = fileName  
         };
 
@@ -106,7 +113,10 @@ public class ProductController:Controller
         _context.SaveChanges();
 
         return RedirectToAction("Index");
-
+      }
+     
+      ViewBag.Categories =  new SelectList(_context.Categories.ToList(), "Id","CategoryId");
+      return View(model);
     }
 
     public ActionResult Edit(int id)
@@ -137,18 +147,21 @@ public class ProductController:Controller
             return RedirectToAction("Index");
         }
 
+        if(ModelState.IsValid)
+        {
+
         var entity = _context.Products.FirstOrDefault(i=> i.Id == model.Id);
         
         if(entity != null)
         {
-            if(model.ImageFile != null)
+            if(model.Image != null)
             {
             var fileName = Path.GetRandomFileName() + ".jpg";
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
             
             using(var stream = new FileStream(path, FileMode.Create))
             {
-                await model.ImageFile!.CopyToAsync(stream);
+                await model.Image!.CopyToAsync(stream);
             }
 
             entity.Image = fileName;
@@ -157,10 +170,10 @@ public class ProductController:Controller
 
             entity.ProductName = model.ProductName;
             entity.Explanation = model.Explanation;
-            entity.Price = model.Price;
+            entity.Price = model.Price ?? 0;
             entity.IsActive = model.IsActive;
             entity.Homepage = model.Homepage;
-            entity.CategoryId = model.CategoryId;
+            entity.CategoryId =(int)model.CategoryId!;
 
             _context.SaveChanges();
 
@@ -169,6 +182,47 @@ public class ProductController:Controller
              return RedirectToAction("Index");
         }
 
+        } 
+        ViewBag.Categories =  new SelectList(_context.Categories.ToList(), "Id","CategoryId");
         return View(model);
     }
+
+     public ActionResult Delete(int? id)
+    {
+        if(id == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        var entity = _context.Products.FirstOrDefault(i => i.Id == id);
+
+        if(entity != null)
+        {
+          return View(entity);
+        }
+            return RedirectToAction("Index");
+    }
+
+   [HttpPost]
+    public ActionResult DeleteConfirm(int? id)
+    {
+        if(id == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        var entity = _context.Products.FirstOrDefault(i => i.Id == id);
+
+        if(entity != null)
+        {
+            _context.Products.Remove(entity);
+            _context.SaveChanges();
+
+
+             TempData["Message"] = $"{entity.ProductName} product deleted.";            
+
+        }
+            return RedirectToAction("Index");
+    }
+
 }

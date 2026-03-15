@@ -66,6 +66,14 @@
                         >
                           <i class="fa-solid fa-pen-to-square"></i>
                         </a>
+                          <a
+                           asp-controller="Product"
+                           asp-action="Delete" 
+                           asp-route-id="@product.Id"
+                          class="btn btn-danger btn-sm"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </a>
                       </td>
                     </tr>
                    }
